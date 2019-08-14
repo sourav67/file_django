@@ -1,0 +1,31 @@
+{% block content %}
+	<h1>upload list</h1>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Title</th>
+			<th>file</th>
+			<th>Created date</th>
+			<th>published date</th>
+		</tr>
+		 </thead>
+		 <tbody>
+		 	{% for file in files %}
+		 	<tr>
+		 		<td>{{file.title}}</td>
+		 		<td>
+		 			<a href="{{ file.file.url }}" class="btn btn-primary btn-sm" target="_blank">
+		 				Download
+		 			</a>
+		 		</td>
+		 		<td>{{file.created_date}}</td>
+		 		<td>{{published_date}}</td>
+
+		 	</tr>
+		 	{%endfor%}
+
+		 </tbody>
+	</table>
+
+{% endblock %}		
+
